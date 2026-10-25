@@ -1,0 +1,409 @@
+/* --- 1. איפוס והגדרות בסיס --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f8fafc; /* רקע בהיר ונקי */
+  color: #1e293b;
+  direction: rtl; /* עברית מובנית */
+  overflow-x: hidden;
+}
+
+/* --- 2. עיצוב סרגל הניווט (Navbar) --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #0f172a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-item {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.nav-item:hover {
+  color: #f8fafc;
+}
+
+.logout {
+  color: #f87171 !important;
+}
+.logout:hover {
+  color: #ef4444 !important;
+}
+
+/* --- 3. עיצוב כרטיסיות קטנות (דף בית, התחברות, הרשמה) --- */
+.cssAllDiv {
+  margin: 100px auto;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 35px;
+  width: 90%;
+  max-width: 450px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.cssAllDiv h1 {
+  font-size: 2rem;
+  color: #0f172a;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.cssAllDiv h3, .cssAllDiv h4 {
+  font-size: 0.95rem;
+  color: #475569;
+  align-self: flex-start;
+  margin-top: 15px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.home-description {
+  color: #64748b;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* אזור כפתורי דף הבית */
+.home-nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
+}
+
+/* --- 4. שדות קלט (טקסט וסיסמה) בתוך הטפסים --- */
+.cssAllDiv input[type="text"],
+.cssAllDiv input[type="password"] {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #1e293b;
+  text-align: right;
+  transition: all 0.2s ease;
+}
+
+.cssAllDiv input[type="text"]:focus,
+.cssAllDiv input[type="password"]:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* --- 5. עיצוב כפתורים אחיד ומקצועי --- */
+.input, input[type='button'], button.input {
+  width: 100%;
+  max-width: 280px;
+  padding: 12px 24px;
+  margin: 10px auto;
+  background-color: #3b82f6; /* כחול מודרני */
+  color: white;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  text-align: center;
+}
+
+.input:hover, input[type='button']:hover, button.input:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+/* כפתור הרשמה משני בדף הבית */
+.btn-secondary {
+  background-color: #e2e8f0;
+  color: #334155;
+}
+.btn-secondary:hover {
+  background-color: #cbd5e1;
+  box-shadow: none;
+  color: #334155;
+}
+
+/* --- 6. עיצוב לוחות הבקרה הגדולים (מורה ותלמיד - C, D, E) --- */
+.teacher-dashboard {
+  padding: 100px 24px 40px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: block; /* מניעת התנגשויות flex */
+  text-align: right;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 35px;
+  margin-top: 20px;
+}
+
+.dashboard-header h1 {
+  font-size: 2.2rem;
+  color: #0f172a;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.dashboard-header p {
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+/* שורת סטטיסטיקות */
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: #ffffff;
+  padding: 22px 40px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  border: 1px solid #e2e8f0;
+  min-width: 200px;
+}
+
+.stat-card h3 {
+  font-size: 2.2rem;
+  color: #3b82f6;
+  margin-bottom: 4px;
+}
+
+.stat-card p {
+  color: #64748b;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* גריד של כרטיסיות הפעולה */
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  width: 100%;
+  box-shadow: none;
+  background: transparent;
+}
+
+.action-card {
+  background: #ffffff;
+  color: #1e293b;
+  padding: 30px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s ease;
+  min-height: 220px;
+}
+
+.action-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+  border-color: #cbd5e1;
+}
+
+.action-card h4 {
+  font-size: 1.2rem;
+  color: #0f172a;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+/* רדיו בוטנס */
+input[type="radio"] {
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+/* כפתור חזור */
+#back {
+  position: absolute;
+  top: 85px;
+  right: 25px;
+  width: auto;
+  padding: 8px 18px;
+}
+
+/* --- 7. עיצוב טבלאות נקי ומקצועי --- */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+th {
+  background-color: #f8fafc;
+  color: #475569;
+  padding: 14px 18px;
+  font-weight: 600;
+  text-align: right;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+td {
+  padding: 14px 18px;
+  color: #334155;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+code {
+  direction: ltr;
+  display: inline-block;
+  background-color: #f1f5f9;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: Consolas, Monaco, monospace;
+  color: #0f172a;
+}
+
+/* --- עיצוב מיוחד לדף הבית המשולב עם תמונה --- */
+
+/* עטיפה לכל דף הבית שמחלקת אותו ל-2 חצאים */
+.home-page-wrapper {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f8fafc;
+  align-items: center;
+  justify-content: center;
+}
+
+/* התאמת כרטיסיית הטקסט שתשב בצד אחד בצורה יפה */
+.home-split-card {
+  margin: 0 40px !important;
+  flex: 1;
+  max-width: 460px;
+  z-index: 2;
+}
+
+/* האזור של התמונה/הגרפיקה בצד השני */
+/* התאמת כרטיסיית הטקסט - תתפוס עכשיו יותר מקום במסך */
+.home-split-card {
+  margin: 0 90px !important;
+  flex: 3; /* הגדלנו את היחס כדי שהטקסט והכפתורים יקבלו יותר שטח */
+  max-width: 500px;
+  z-index: 2;
+}
+
+/* האזור של התמונה בצד - הקטנו את ה-flex שלו */
+.home-image-side {
+  flex: 1; /* לוקח פחות מקום בהשוואה לכרטיסייה */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* עיצוב התמונה עצמה בתוך הדיב */
+.math-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* שומר על פרופורציות התמונה שלא תתעוות */
+}
+
+/* אפקט הנוסחאות הצפות על הרקע (כמו האיור הוקטורי המקצועי) */
+.math-bg-graphic {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0.85;
+}
+
+.math-overlay-text {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.15); /* נוסחאות שקופות בעדינות ברקע */
+  font-size: 4rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  top: 20%;
+  left: 15%;
+  transform: rotate(-15deg);
+}
+
+.graphic-2 {
+  top: 60%;
+  left: 45%;
+  font-size: 5rem;
+  transform: rotate(10deg);
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.graphic-3 {
+  top: 40%;
+  left: 70%;
+  font-size: 3.5rem;
+  transform: rotate(-5deg);
+  color: rgba(255, 255, 255, 0.12);
+}
+
+/* התאמה למסכים קטנים (טלפונים) - שהתמונה תיעלם ויישאר רק הריבוע של התוכן */
+@media (max-width: 900px) {
+  .home-image-side {
+    display: none;
+  }
+  .home-page-wrapper {
+    padding: 20px;
+  }
+  .home-split-card {
+    margin: 40px auto !important;
+  }
+}
+.hidden-input {
+  display: none !important;
+}
